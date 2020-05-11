@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 class CategoryItem extends Component {
@@ -13,8 +13,11 @@ class CategoryItem extends Component {
     }
 
     render(){
+        // console.log(this.state)
         return (
-            <li>{this.state.item.categoryName}</li>
+            <li>
+           <Link to={`/passages/${this.state.item.id}`}>{this.state.item.categoryName}</Link> 
+            </li>
         )
     }
   }
