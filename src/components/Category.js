@@ -20,7 +20,7 @@ getCategories() {
     axios.get('http://localhost:3001/api/categories')
     .then(response => {
         this.setState({categories: response.data}, () => {
-            console.log(this.state)
+            // console.log(this.state)
         })
     })
 }
