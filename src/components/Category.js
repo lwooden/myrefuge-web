@@ -10,6 +10,8 @@ class Category extends Component {
        this.state = {
            categories: []
        }
+
+       // console.log(props) // check props that were passed down to this component
     }
     
 componentDidMount() {
@@ -25,7 +27,7 @@ getCategories() {
     })
 }
 
-
+// Component Style
 render() {
     const categoryList = this.state.categories.map((category, i) => {
         return(
@@ -44,7 +46,7 @@ render() {
 }
 
 
-
+// Element Style
 // render() {
 //     const categoryList = this.state.categories.map((category, i) => {
 //         return(
