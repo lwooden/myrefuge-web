@@ -10,7 +10,7 @@ class CategoryItem extends Component {
         this.state = {
             item: props.item
         }
-        // console.log(props) // check props that were passed down to this component
+        console.log("Props passed to Category Item:",props) // check props that were passed down to this component
     }
 
     render(){

@@ -10,7 +10,7 @@ class CategoryDetailsPage extends Component {
             details: [],
             category: ''
         }
-        // console.log(props) // check props that were passed down to this component
+        console.log("Props passed to PassagePage:",props) // check props that were passed down to this component
     }
 
 componentDidMount() {
