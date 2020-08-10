@@ -14,7 +14,7 @@ class CategoryItem extends Component {
     }
 
     render(){
-        // console.log(this.state)
+        console.log("CategoryItem State:",this.state.item)
         return (
             <li>
            <Link to={`/passages/${this.state.item.id}`}>{this.state.item.categoryName}</Link> 
