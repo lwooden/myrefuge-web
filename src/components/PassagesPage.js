@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import PassageItem from '../components/PassageItem'
 
 
-class CategoryDetailsPage extends Component {
+class PassagesPage extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            details: [],
+            passages: [],
             category: ''
         }
         console.log("Props passed to PassagePage:",props) // check props that were passed down to this component
@@ -27,8 +28,8 @@ getPassagesByCategory() {
     let categoryId = this.props.match.params.id
     axios.get(`http://localhost:3001/api/categories/${categoryId}/passages`)
     .then(response => {
-        this.setState({details: response.data}, () => {
-            // console.log(this.state)
+        this.setState({passages: response.data}, () => {
+            console.log(this.state)
         })
     })
     .catch(err => console.log)
@@ -48,15 +49,13 @@ setCategory() {
     .catch(err => console.log)
 }
 
+
     render(){
         // console.log(this.state.details)
         // console.log(this.state.category)
-        const passageList = this.state.details.map((passage, i) => {
+        const passageList = this.state.passages.map((passage, i) => {
             return(
-                <div>
-                    <p>{passage.passageText}</p>
-                    <p>- {passage.passageLocation}</p>
-                </div>
+                <PassageItem key={passage.id} item={passage} id={passage.id} verse={passage.passageText} location={passage.passageLocation} likeCounter={passage.likeCounter} />
             )
         })
         return (
@@ -69,7 +68,7 @@ setCategory() {
 }
 
 
-export default CategoryDetailsPage
+export default PassagesPage
 
 
 
