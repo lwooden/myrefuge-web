@@ -33,8 +33,8 @@ class PassageItem extends Component {
 
             // post new likeCounter value to the database
             axios.post('http://localhost:3001/api/passages/likeVerse', {
-                passageId: this.state.id,
-                currentLikeCounter: newValue
+                passageId: this.state.id
+                // currentLikeCounter: newValue
             })
             .then(response => {
                     console.log(response)
